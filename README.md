@@ -5,7 +5,7 @@ Using pipedream's "New Page in Database" Trigger.
 
 If you dont need the filtering, simply change the `pages = get_pages_with_filter(MEMBERS_DATABASE, active_filter)` call to use `get_pages()`
 
-You need to set the following
+You need to set the following, where the `DATABASE` entires are the unique id for the database.
 ```
 NOTION_TOKEN = ""
 TODOS_DATABASE = ""
