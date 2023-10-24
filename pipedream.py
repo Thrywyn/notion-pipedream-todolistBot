@@ -43,11 +43,6 @@ def get_pages(databaseID: str, num_pages=None):
 
     data = response.json()
 
-    # Comment this out to dump all data to a file
-    # import json
-    # with open('db.json', 'w', encoding='utf8') as f:
-    #     json.dump(data, f, ensure_ascii=False, indent=4)
-
     results = data["results"]
     while data["has_more"] and get_all:
         payload = {"page_size": page_size, "start_cursor": data["next_cursor"]}
@@ -72,11 +67,6 @@ def get_pages_with_filter(databaseID: str, filter: dict, num_pages=None):
     response = requests.post(url, json=payload, headers=headers)
 
     data = response.json()
-
-    # Comment this out to dump all data to a file
-    # import json
-    # with open('db.json', 'w', encoding='utf8') as f:
-    #     json.dump(data, f, ensure_ascii=False, indent=4)
 
     results = data["results"]
     while data["has_more"] and get_all:
